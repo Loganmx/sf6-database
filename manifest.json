@@ -1,69 +1,23 @@
 {
-  "version": "12.0.0",
+  "version": "15.0.0",
   "characters": [
     {
       "id": "ryu",
       "name": "Ryu",
       "image": "https://www.streetfighter.com/6/assets/images/character/ryu/chara_visual.png",
-      "style": "Shoto / Equilibrado",
-      "vitals": {
-        "health": "10000",
-        "walk_speed": "Forward: 0.047 | Backward: 0.032",
-        "dash_speed": "Forward: 19f (1.252 dist) | Backward: 23f (0.923 dist)",
-        "jump": "Speed: 4+38+3 | Apex: 2.115",
-        "throw": "Range: 0.8 | Hurtbox: 0.33"
-      },
-      "introduction": "Ryu busca a verdadeira força. Como o shoto original, ele enfatiza um estilo de jogo paciente com ferramentas defensivas fortes (Hadoken e Shoryuken).",
-      "strategy_notes": [
-        "Denjin Charge: Carrega um estoque para fortalecer o próximo Hadoken ou Hashogeki.",
-        "Hashogeki: Nova ferramenta de combo e pressão. Denjin dá acesso a juggles ou frames positivos.",
-        "Weakness: Falta de 'gimmicks' - exige fundamentos sólidos em tempo integral."
-      ],
-      "normals_frame_data": [
-        { "move": "5LP (Standing Light Punch)", "startup": "4f", "active": "3f", "recovery": "7f", "on_block": "-1", "on_hit": "+4", "details": "Melhor starter de 4f; mais alcance que 2LP." },
-        { "move": "5MP (Standing Medium Punch)", "startup": "6f", "active": "4f", "recovery": "11f", "on_block": "-1", "on_hit": "+7", "details": "Principal iniciador de combo; link em 4HP em point blank." },
-        { "move": "5HP (Standing Heavy Punch)", "startup": "10f", "active": "5f", "recovery": "18f", "on_block": "-2", "on_hit": "+4", "details": "Poke agressivo; força estado de pé." },
-        { "move": "2LP (Crouching Light Punch)", "startup": "4f", "active": "2f", "recovery": "9f", "on_block": "-1", "on_hit": "+4", "details": "Rápido, útil para combos após 2LK." },
-        { "move": "2MP (Crouching Medium Punch)", "startup": "6f", "active": "4f", "recovery": "13f", "on_block": "0", "on_hit": "+5", "details": "Ótimo para checar Drive Rush adversário." },
-        { "move": "2MK (Crouching Medium Kick)", "startup": "8f", "active": "3f", "recovery": "19f", "on_block": "-6", "on_hit": "+1", "details": "Poke cancelável essencial. 20% de scaling no combo." },
-        { "move": "2HK (Sweep)", "startup": "9f", "active": "3f", "recovery": "23f", "on_block": "-12", "on_hit": "KD", "details": "Grande alcance, mas punível se bloqueado." }
-      ],
-      "command_normals": [
-        { "move": "6MP (Collarbone Breaker)", "startup": "20f", "on_block": "-1", "details": "Overhead de 2 hits; comba após Drive Rush." },
-        { "move": "6HP (Solar Plexus)", "startup": "20f", "on_block": "+3", "details": "Vantagem massiva; cuidado com Drive Impact." },
-        { "move": "4HP (Short Uppercut)", "startup": "7f", "on_block": "-13", "details": "O normal pesado mais rápido do Ryu." }
-      ],
-      "special_moves": [
-        {
-          "name": "Hadoken (236P)",
-          "input": "↓↘→ + P",
-          "details": "LP (16f startup) é o mais seguro. OD (12f startup) é 2-hit e permite combos de juggle no canto."
-        },
-        {
-          "name": "Shoryuken (623P)",
-          "input": "→↓↘ + P",
-          "details": "LP (5f) é o melhor anti-air geral. OD (6f) tem invencibilidade total nos frames 1-8."
-        },
-        {
-          "name": "Tatsu (214K)",
-          "input": "↓↙← + K",
-          "details": "LK Tatsu mantém o oponente perto para mixup de throw/strike."
-        },
-        {
-          "name": "High Blade Kick (236K)",
-          "input": "↓↘→ + K",
-          "details": "LK permite safe jump no canto. OD (KK) causa Wall Bounce (+49 adv)."
-        },
-        {
-          "name": "Hashogeki (214P)",
-          "input": "↓↙← + P",
-          "details": "HP (30f) é +2 no block. Denjin vira launcher de juggle."
-        }
-      ],
-      "super_arts": [
-        { "name": "Shinku Hadoken (SA1)", "input": "236236P", "details": "Startup 7f. Invencível contra strikes/throws (1-8f)." },
-        { "name": "Shin Hashogeki (SA2)", "input": "214214P", "details": "Carregável. Lv3 causa Tumble OTG (+78 advantage)." },
-        { "name": "Shin Shoryuken (SA3)", "input": "236236K", "details": "Invencível (1-16f). 5f startup (2f se cancelado de 623HP)." }
+      "style": "Shoto / Fundamentals",
+      "difficulty": "Fácil",
+      "description": "DADOS VITAIS:\n- Life Points: 10000\n- Forward Walk Speed: 0.047\n- Backward Walk Speed: 0.032\n- Forward Dash Speed: 19 frames (Dist: 1.252)\n- Backward Dash Speed: 23 frames (Dist: 0.923)\n- Jump Speed: 4+38+3 | Apex: 2.115\n- Throw Range: 0.8\n\nESTRATÉGIA COMPLETA:\nRyu é o personagem shoto original. Enfatiza um estilo paciente com fortes ferramentas defensivas. Hadoken e Shoryuken formam sua base. Novos recursos como Denjin Charge e Hashogeki permitem estender pressão e combos. Fraqueza: Falta de 'gimmicks', exigindo fundamentos puros.\n\nFRAME DATA DETALHADO (NORMALS):\n- 5LP: Startup 4f | Active 3f | Recovery 7f | Block -1 | Hit +4\n- 5MP: Startup 6f | Active 4f | Recovery 11f | Block -1 | Hit +7\n- 5HP: Startup 10f | Active 5f | Recovery 18f | Block -2 | Hit +4\n- 5LK: Startup 5f | Active 3f | Recovery 11f | Block -4 | Hit +2\n- 5MK: Startup 9f | Active 3f | Recovery 18f | Block -4 | Hit +4\n- 5HK: Startup 12f | Active 4f | Recovery 20f | Block +1 | Hit +9\n- 2LP: Startup 4f | Active 2f | Recovery 9f | Block -1 | Hit +4\n- 2MP: Startup 6f | Active 4f | Recovery 13f | Block 0 | Hit +5\n- 2HP: Startup 9f | Active 6f | Recovery 21f | Block -7 | Hit +1\n- 2LK: Startup 5f | Active 2f | Recovery 10f | Block -1 | Hit +3\n- 2MK: Startup 8f | Active 3f | Recovery 19f | Block -6 | Hit +1\n- 2HK: Startup 9f | Active 3f | Recovery 23f | Block -12\n\nCOMMAND NORMALS:\n- 6MP: Startup 20f | Overhead de 2 hits.\n- 6HP: Startup 20f | Block +3 | Hit +6.\n- 4HP: Startup 7f | O normal pesado mais rápido do Ryu.\n- 4HK: Startup 10f | Cancelável em ambos os hits.\n\nDETALHES DE ESPECIAIS:\n- Shoryuken OD: Invencível frames 1-8.\n- Donkey Kick OD: Causa Wall Bounce (+49 advantage).\n- SA1: Invencível contra strikes/throws frames 1-8.\n- SA3: Invencível total frames 1-16. Startup de 5f (2f se cancelado de 623HP).",
+      "moves": [
+        { "name": "Hadoken (236P)", "input": "↓↘→ + P", "description": "Projétil clássico. LP (16f) é seguro. OD (12f) permite combos no canto." },
+        { "name": "Shoryuken (623P)", "input": "→↓↘ + P", "description": "Anti-air. LP tem 14f de invencibilidade aérea. OD é o reversal principal." },
+        { "name": "Tatsu (214K)", "input": "↓↙← + K", "description": "LK mantém perto. MK/HK têm invencibilidade a projéteis baixos (10-41/61f)." },
+        { "name": "High Blade Kick (236K)", "input": "↓↘→ + K", "description": "Donkey Kick. LK dá safe jump no canto. OD quica na parede." },
+        { "name": "Hashogeki (214P)", "input": "↓↙← + P", "description": "HP é +2 no block. Denjin torna o golpe um launcher para juggles." },
+        { "name": "Denjin Charge", "input": "↓↓ + P", "description": "Carrega energia para o próximo Hadoken ou Hashogeki." },
+        { "name": "Shinku Hadoken (SA1)", "input": "↓↘→↓↘→ + P", "description": "Super Lv1. 5-hit (8 com Denjin). Dano mínimo escala 30%." },
+        { "name": "Shin Hashogeki (SA2)", "input": "↓↙←↓↙← + P", "description": "Super Lv2. Carregável. No Lv3 causa Tumble OTG (+78 advantage)." },
+        { "name": "Shin Shoryuken (SA3)", "input": "↓↘→↓↘→ + K", "description": "Super Lv3 Devastador. Invencível nos frames 1-16." }
       ]
     }
   ]
