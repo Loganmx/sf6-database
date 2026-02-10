@@ -1,26 +1,75 @@
 {
-  "version": "4.0.0",
+  "version": "7.0.0",
   "characters": [
     {
       "id": "ryu",
       "name": "Ryu",
-      "style": "Equilibrado",
+      "image": "https://www.streetfighter.com/6/assets/images/character/ryu/chara_visual.png",
+      "style": "Shoto / Fundamentals",
       "difficulty": "Fácil",
       "vitality": "10000",
-      "description": "O andarilho que busca o verdadeiro significado da força.",
-      "moves": [
-        { "name": "Hadoken", "input": "↓↘→ + P", "type": "Special" },
-        { "name": "Shoryuken", "input": "→↓↘ + P", "type": "Special" },
-        { "name": "Tatsumaki Senpukyaku", "input": "↓↙← + K", "type": "Special" },
-        { "name": "Hashogeki", "input": "↓↙← + P", "type": "Special" },
-        { "name": "Shinkuu Hadoken", "input": "↓↘→↓↘→ + P", "type": "Super Art Lv1" },
-        { "name": "Shin Hashogeki", "input": "↓↙←↓↙← + P", "type": "Super Art Lv2" },
-        { "name": "Shin Shoryuken", "input": "↓↘→↓↘→ + K", "type": "Super Art Lv3" },
-        { "name": "Drive Impact", "input": "LB + RB", "type": "System" },
-        { "name": "Drive Parry", "input": "LT + RT", "type": "System" }
+      "description": "Ryu incorpora todos os aspectos significativos da jogabilidade de Street Fighter. Ele enfatiza um estilo de jogo paciente com ferramentas defensivas fortes, como o Hadoken e o Shoryuken.",
+      "vitals": {
+        "forward_walk_speed": "0.047",
+        "backward_walk_speed": "0.032",
+        "forward_dash": "19 frames (1.252 distância)",
+        "backward_dash": "23 frames (0.923 distância)",
+        "jump_speed": "4+38+3",
+        "throw_range": "0.8"
+      },
+      "strategy_notes": [
+        "Denjin Charge: Permite carregar um estoque para fortalecer Hadoken ou Hashogeki.",
+        "Axe Kick (4HK): Cancelável em ambos os hits, ótimo para combos de wakeup.",
+        "Solar Plexus Strike (6HP): Avanço poderoso com vantagem de +3 no block.",
+        "Short Uppercut (4HP): O normal pesado mais rápido (7f), essencial para combos no canto."
+      ],
+      "special_moves": [
+        {
+          "name": "Hadoken (236P)",
+          "input": "↓↘→ + P",
+          "details": "LP é o mais seguro (+2 no hit). OD Hadoken é 2-hit e permite combos de Drive Rush no canto."
+        },
+        {
+          "name": "Shoryuken (623P)",
+          "input": "→↓↘ + P",
+          "details": "LP tem 14f de invencibilidade anti-aérea. OD Shoryuken (PP) tem invencibilidade total nos frames 1-8."
+        },
+        {
+          "name": "Tatsumaki Senpu-kyaku (214K)",
+          "input": "↓↙← + K",
+          "details": "MK e HK têm invencibilidade a projéteis na parte inferior (frames 10-41/61)."
+        },
+        {
+          "name": "High Blade Kick (236K)",
+          "input": "↓↘→ + K",
+          "details": "LK (14f startup) permite safe jump no canto. OD (KK) causa Wall Bounce (+49 advantage)."
+        },
+        {
+          "name": "Hashogeki (214P)",
+          "input": "↓↙← + P",
+          "details": "Pode anular projéteis. HP Hashogeki dá +2 de vantagem no bloqueio e mantém o oponente perto."
+        }
+      ],
+      "super_arts": [
+        {
+          "name": "Shinku Hadoken (Lv1)",
+          "input": "↓↘→↓↘→ + P",
+          "details": "Invencibilidade contra strikes/throws (1-8f). Com Denjin, causa 2400 de dano e viaja mais rápido."
+        },
+        {
+          "name": "Shin Hashogeki (Lv2)",
+          "input": "↓↙←↓↙← + P",
+          "details": "Pode ser carregado (Lv1, Lv2, Lv3). No Lv3 Denjin, causa Tumble e permite juggles extras."
+        },
+        {
+          "name": "Shin Shoryuken (Lv3)",
+          "input": "↓↘→↓↘→ + K",
+          "details": "Dano massivo (4000/4500 CA). Invencibilidade total nos frames 1-16. 5f de startup se cancelado de 623HP."
+        }
       ]
-    },
-    {
+    }
+  ]
+}
       "id": "ken",
       "name": "Ken Masters",
       "style": "Ofensivo",
