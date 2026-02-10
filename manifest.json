@@ -1,32 +1,41 @@
 {
-  "version": "3.0.0",
+  "version": "4.0.0",
   "characters": [
     {
       "id": "ryu",
       "name": "Ryu",
       "style": "Equilibrado",
       "difficulty": "Fácil",
+      "vitality": "10000",
       "description": "O andarilho que busca o verdadeiro significado da força.",
       "moves": [
-        { "name": "Hadoken", "input": "↓↘→ + P", "damage": "600" },
-        { "name": "Shoryuken", "input": "→↓↘ + P", "damage": "1200" },
-        { "name": "Tatsumaki Senpukyaku", "input": "↓↙← + K", "damage": "800" },
-        { "name": "Shakunetsu Hadoken", "input": "←↙↓↘→ + P", "damage": "700" },
-        { "name": "Hashogeki", "input": "↓↙← + P", "damage": "500" }
+        { "name": "Hadoken", "input": "↓↘→ + P", "type": "Special" },
+        { "name": "Shoryuken", "input": "→↓↘ + P", "type": "Special" },
+        { "name": "Tatsumaki Senpukyaku", "input": "↓↙← + K", "type": "Special" },
+        { "name": "Hashogeki", "input": "↓↙← + P", "type": "Special" },
+        { "name": "Shinkuu Hadoken", "input": "↓↘→↓↘→ + P", "type": "Super Art Lv1" },
+        { "name": "Shin Hashogeki", "input": "↓↙←↓↙← + P", "type": "Super Art Lv2" },
+        { "name": "Shin Shoryuken", "input": "↓↘→↓↘→ + K", "type": "Super Art Lv3" },
+        { "name": "Drive Impact", "input": "LB + RB", "type": "System" },
+        { "name": "Drive Parry", "input": "LT + RT", "type": "System" }
       ]
     },
     {
       "id": "ken",
-      "name": "Ken",
+      "name": "Ken Masters",
       "style": "Ofensivo",
       "difficulty": "Fácil",
-      "description": "O herdeiro da família Masters e eterno rival de Ryu.",
+      "vitality": "10000",
+      "description": "Ex-campeão nacional dos EUA e eterno rival de Ryu.",
       "moves": [
-        { "name": "Hadoken", "input": "↓↘→ + P", "damage": "600" },
-        { "name": "Shoryuken", "input": "→↓↘ + P", "damage": "1300" },
-        { "name": "Tatsumaki Senpukyaku", "input": "↓↙← + K", "damage": "800" },
-        { "name": "Jinrai Kick", "input": "↓↘→ + K", "damage": "Varia" },
-        { "name": "Dragon Lash Kick", "input": "→↓↘ + K", "damage": "900" }
+        { "name": "Hadoken", "input": "↓↘→ + P", "type": "Special" },
+        { "name": "Shoryuken", "input": "→↓↘ + P", "type": "Special" },
+        { "name": "Jinrai Kick", "input": "↓↘→ + K", "type": "Special" },
+        { "name": "Dragon Lash Kick", "input": "→↓↘ + K", "type": "Special" },
+        { "name": "Dragon Dash", "input": "KK", "type": "Special" },
+        { "name": "Dragon Gleam", "input": "↓↘→↓↘→ + K", "type": "Super Art Lv1" },
+        { "name": "Shippu Jinrai Kyaku", "input": "↓↘→↓↘→ + P", "type": "Super Art Lv2" },
+        { "name": "Shinryu Reppa", "input": "↓↘→↓↘→ + K", "type": "Super Art Lv3" }
       ]
     },
     {
@@ -34,26 +43,16 @@
       "name": "Chun-Li",
       "style": "Velocidade/Zoning",
       "difficulty": "Média",
+      "vitality": "10000",
       "description": "Uma lenda do Kung Fu e ex-agente da Interpol.",
       "moves": [
-        { "name": "Kikoken", "input": "← (segura) → + P", "damage": "500" },
-        { "name": "Hyakuretsu Kyaku", "input": "↓↘→ + K", "damage": "700" },
-        { "name": "Spinning Bird Kick", "input": "↓ (segura) ↑ + K", "damage": "1100" },
-        { "name": "Hazanshu", "input": "↓↙← + K", "damage": "900" },
-        { "name": "Tensho Kicks", "input": "↓↓ + K", "damage": "800" }
-      ]
-    },
-    {
-      "id": "luke",
-      "name": "Luke",
-      "style": "Standard",
-      "difficulty": "Fácil",
-      "description": "O instrutor de combate apaixonado por videogames.",
-      "moves": [
-        { "name": "Sand Blast", "input": "↓↘→ + P", "damage": "650" },
-        { "name": "Rising Rocket", "input": "→↓↘ + P", "damage": "1100" },
-        { "name": "Avenger", "input": "↓↙← + P", "damage": "Varia" },
-        { "name": "Flash Knuckle", "input": "↓↙← + P", "damage": "800" }
+        { "name": "Kikoken", "input": "←(seg)→ + P", "type": "Special" },
+        { "name": "Hyakuretsu Kyaku", "input": "↓↘→ + K", "type": "Special" },
+        { "name": "Spinning Bird Kick", "input": "↓(seg)↑ + K", "type": "Special" },
+        { "name": "Serenity Stream", "input": "↓↙← + P", "type": "Stance" },
+        { "name": "Sanchuan Kyaku", "input": "↓↘→↓↘→ + K", "type": "Super Art Lv1" },
+        { "name": "Kikosho", "input": "↓↘→↓↘→ + P", "type": "Super Art Lv2" },
+        { "name": "Hosenka", "input": "↓↘→↓↘→ + K", "type": "Super Art Lv3" }
       ]
     },
     {
@@ -61,25 +60,15 @@
       "name": "Guile",
       "style": "Zoning",
       "difficulty": "Média",
-      "description": "Major da Força Aérea Americana que luta pela paz.",
+      "vitality": "10000",
+      "description": "Major da Força Aérea que luta pela paz e família.",
       "moves": [
-        { "name": "Sonic Boom", "input": "← (segura) → + P", "damage": "600" },
-        { "name": "Somersault Kick", "input": "↓ (segura) ↑ + K", "damage": "1200" },
-        { "name": "Sonic Blade", "input": "↓↙← + P", "damage": "200" },
-        { "name": "Sonic Cross", "input": "→ + P (após Blade)", "damage": "700" }
-      ]
-    },
-    {
-      "id": "juri",
-      "name": "Juri",
-      "style": "Pressão/Mix-up",
-      "difficulty": "Difícil",
-      "description": "Uma lutadora sádica movida pelo prazer da destruição.",
-      "moves": [
-        { "name": "Fuhajin", "input": "↓↙← + K", "damage": "0 (Carga)" },
-        { "name": "Tensenrin", "input": "→↓↘ + K", "damage": "1000" },
-        { "name": "Saihashu", "input": "↓↘→ + K", "damage": "700" },
-        { "name": "Ansenku", "input": "↓↙← + K (Ar)", "damage": "850" }
+        { "name": "Sonic Boom", "input": "←(seg)→ + P", "type": "Special" },
+        { "name": "Somersault Kick", "input": "↓(seg)↑ + K", "type": "Special" },
+        { "name": "Sonic Blade", "input": "↓↙← + P", "type": "Special" },
+        { "name": "Sonic Hurricane", "input": "←(seg)→←→ + P", "type": "Super Art Lv1" },
+        { "name": "Solid Puncher", "input": "↓↙←↓↙← + P", "type": "Super Art Lv2" },
+        { "name": "Crossfire Somersault", "input": "←(seg)→←→ + K", "type": "Super Art Lv3" }
       ]
     },
     {
@@ -87,51 +76,47 @@
       "name": "Zangief",
       "style": "Grappler",
       "difficulty": "Difícil",
+      "vitality": "11000",
       "description": "O Ciclone Vermelho que luta pela glória da Rússia.",
       "moves": [
-        { "name": "Screw Piledriver", "input": "Giro 360 + P", "damage": "2500" },
-        { "name": "Double Lariat", "input": "P + P (Dois Socos)", "damage": "1000" },
-        { "name": "Siberian Express", "input": "←↙↓↘→ + K", "damage": "1600" },
-        { "name": "Borscht Bomber", "input": "Giro 360 + K (Ar)", "damage": "2200" }
+        { "name": "Screw Piledriver", "input": "360 + P", "type": "Special" },
+        { "name": "Double Lariat", "input": "PP", "type": "Special" },
+        { "name": "Siberian Express", "input": "←↙↓↘→ + K", "type": "Special" },
+        { "name": "Aerial Russian Slam", "input": "↓↘→↓↘→ + K", "type": "Super Art Lv1" },
+        { "name": "Cyclone Lariat", "input": "↓↘→↓↘→ + P", "type": "Super Art Lv2" },
+        { "name": "Bolshoi Storm Buster", "input": "720 + P", "type": "Super Art Lv3" }
+      ]
+    },
+    {
+      "id": "juri",
+      "name": "Juri Han",
+      "style": "Pressão",
+      "difficulty": "Difícil",
+      "vitality": "10000",
+      "description": "Uma sádica movida pelo prazer da destruição.",
+      "moves": [
+        { "name": "Fuhajin", "input": "↓↙← + K", "type": "Special" },
+        { "name": "Saihashu", "input": "↓↘→ + K", "type": "Special" },
+        { "name": "Tensenrin", "input": "→↓↘ + K", "type": "Special" },
+        { "name": "Satsuabui", "input": "↓↘→↓↘→ + K", "type": "Super Art Lv1" },
+        { "name": "Feng Shui Engine", "input": "↓↙←↓↙← + P", "type": "Super Art Lv2" },
+        { "name": "Kaisen Dankai Raku", "input": "↓↘→↓↘→ + P", "type": "Super Art Lv3" }
       ]
     },
     {
       "id": "cammy",
-      "name": "Cammy",
+      "name": "Cammy White",
       "style": "Rushdown",
       "difficulty": "Média",
-      "description": "Ex-agente da Delta Red e amante de gatos.",
+      "vitality": "10000",
+      "description": "Agente da Delta Red e amante de gatos.",
       "moves": [
-        { "name": "Spiral Arrow", "input": "↓↘→ + K", "damage": "800" },
-        { "name": "Cannon Spike", "input": "→↓↘ + K", "damage": "1100" },
-        { "name": "Quick Spin Knuckle", "input": "↓↙← + P", "damage": "900" },
-        { "name": "Hooligan Combination", "input": "↘↓↘ + P", "damage": "Varia" }
-      ]
-    },
-    {
-      "id": "deejay",
-      "name": "Dee Jay",
-      "style": "Tricky/Rhythm",
-      "difficulty": "Média",
-      "description": "Músico de renome mundial com ritmo imbatível.",
-      "moves": [
-        { "name": "Air Slasher", "input": "← (segura) → + P", "damage": "600" },
-        { "name": "Jackknife Maximum", "input": "↓ (segura) ↑ + K", "damage": "1000" },
-        { "name": "Machine Gun Upper", "input": "↓↙← + P", "damage": "900" },
-        { "name": "Jus Cool", "input": "↓↙← + K", "damage": "Varia" }
-      ]
-    },
-    {
-      "id": "manon",
-      "name": "Manon",
-      "style": "Grappler/Model",
-      "difficulty": "Média",
-      "description": "Supermodelo e medalhista de ouro em Judô.",
-      "moves": [
-        { "name": "Manège Doré", "input": "→↘↓↙← + P", "damage": "Varia (Medalha)" },
-        { "name": "Dégagé", "input": "↓↙← + K", "damage": "1000" },
-        { "name": "Renversé", "input": "↓↘→ + P", "damage": "1200" },
-        { "name": "Grand Fouetté", "input": "↓↘→ + K", "damage": "800" }
+        { "name": "Spiral Arrow", "input": "↓↘→ + K", "type": "Special" },
+        { "name": "Cannon Spike", "input": "→↓↘ + K", "type": "Special" },
+        { "name": "Quick Spin Knuckle", "input": "↓↙← + P", "type": "Special" },
+        { "name": "Spin Drive Smasher", "input": "↓↘→↓↘→ + K", "type": "Super Art Lv1" },
+        { "name": "Killer Bee Assault", "input": "↓↙←↓↙← + K", "type": "Super Art Lv2" },
+        { "name": "Delta Red Assault", "input": "↓↘→↓↘→ + P", "type": "Super Art Lv3" }
       ]
     },
     {
@@ -139,143 +124,31 @@
       "name": "Marisa",
       "style": "Powerhouse",
       "difficulty": "Fácil",
-      "description": "Uma designer de joias que descende de guerreiros gregos.",
+      "vitality": "10500",
+      "description": "Designer de joias grega com força sobre-humana.",
       "moves": [
-        { "name": "Gladius", "input": "↓↘→ + P", "damage": "1200" },
-        { "name": "Phalanx", "input": "→↓↘ + P", "damage": "1300" },
-        { "name": "Quadriga", "input": "↓↘→ + K", "damage": "1400" },
-        { "name": "Scutum", "input": "↓↙← + P", "damage": "0 (Postura)" }
+        { "name": "Gladius", "input": "↓↘→ + P", "type": "Special" },
+        { "name": "Phalanx", "input": "→↓↘ + P", "type": "Special" },
+        { "name": "Quadriga", "input": "↓↘→ + K", "type": "Special" },
+        { "name": "Javelin of Marisa", "input": "↓↘→↓↘→ + P", "type": "Super Art Lv1" },
+        { "name": "Meteorite", "input": "↓↙←↓↙← + P", "type": "Super Art Lv2" },
+        { "name": "Goddess of the Hunt", "input": "↓↘→↓↘→ + K", "type": "Super Art Lv3" }
       ]
     },
     {
       "id": "jp",
       "name": "JP",
-      "style": "Zoner/Puppet",
+      "style": "Zoner",
       "difficulty": "Difícil",
-      "description": "O enigmático mestre de uma organização internacional.",
+      "vitality": "10000",
+      "description": "Líder de uma ONG internacional com poderes psicônicos.",
       "moves": [
-        { "name": "Triglav", "input": "↓↓ + P", "damage": "800" },
-        { "name": "Stribog", "input": "↓↘→ + P", "damage": "700" },
-        { "name": "Departure", "input": "↓↙← + P", "damage": "Portal" },
-        { "name": "Torbalan", "input": "↓↘→ + K", "damage": "600" },
-        { "name": "Amnesia", "input": "↓↓ + K", "damage": "Contra" }
-      ]
-    },
-    {
-      "id": "dhalsim",
-      "name": "Dhalsim",
-      "style": "Zoning",
-      "difficulty": "Difícil",
-      "description": "Mestre de Yoga com membros elásticos e fogo espiritual.",
-      "moves": [
-        { "name": "Yoga Fire", "input": "↓↘→ + P", "damage": "600" },
-        { "name": "Yoga Flame", "input": "→↘↓↙← + P", "damage": "1000" },
-        { "name": "Yoga Blast", "input": "→↘↓↙← + K", "damage": "1100" },
-        { "name": "Yoga Teleport", "input": "→↓↘ ou ←↓↙ + PPP", "damage": "0" }
-      ]
-    },
-    {
-      "id": "blanka",
-      "name": "Blanka",
-      "style": "Gimmick/Rushdown",
-      "difficulty": "Média",
-      "description": "O defensor da natureza com poderes elétricos.",
-      "moves": [
-        { "name": "Rolling Attack", "input": "← (segura) → + P", "damage": "1000" },
-        { "name": "Vertical Roll", "input": "↓ (segura) ↑ + K", "damage": "1100" },
-        { "name": "Electric Thunder", "input": "↓↙← + P", "damage": "800" },
-        { "name": "Blanka-chan Bomb", "input": "↓↓ + P", "damage": "Explosão" }
-      ]
-    },
-    {
-      "id": "e-honda",
-      "name": "E. Honda",
-      "style": "Sumo/Charge",
-      "difficulty": "Fácil",
-      "description": "Lutador de sumô que busca divulgar sua arte mundialmente.",
-      "moves": [
-        { "name": "Hundred Hand Slap", "input": "↓↙← + P", "damage": "900" },
-        { "name": "Sumo Headbutt", "input": "← (segura) → + P", "damage": "1200" },
-        { "name": "Sumo Smash", "input": "↓ (segura) ↑ + K", "damage": "1100" },
-        { "name": "Oicho Throw", "input": "→↘↓↙← + K", "damage": "1500" }
-      ]
-    },
-    {
-      "id": "jamie",
-      "name": "Jamie",
-      "style": "Drunken/Rushdown",
-      "difficulty": "Difícil",
-      "description": "Pacificador do bairro que luta com o estilo do Punho Bêbado.",
-      "moves": [
-        { "name": "The Devil's Song", "input": "↓↓ + P", "damage": "0 (Drink)" },
-        { "name": "Freeflow Strikes", "input": "↓↘→ + P", "damage": "Varia" },
-        { "name": "Tenshin", "input": "→↘↓↙← + K", "damage": "Garra" },
-        { "name": "Bakkai", "input": "↓↙← + K", "damage": "800" }
-      ]
-    },
-    {
-      "id": "kimberly",
-      "name": "Kimberly",
-      "style": "Ninja/Speed",
-      "difficulty": "Média",
-      "description": "A 39ª sucessora do Bushinryu e fã da cultura anos 80.",
-      "moves": [
-        { "name": "Bushin Senpukyaku", "input": "↓↙← + K", "damage": "900" },
-        { "name": "Sprint", "input": "↓↘→ + K", "damage": "Varia" },
-        { "name": "Vagabond Edge", "input": "↓↘→ + P", "damage": "800" },
-        { "name": "Hidden Variable", "input": "↓↙← + P", "damage": "TP" }
-      ]
-    },
-    {
-      "id": "lily",
-      "name": "Lily",
-      "style": "Grappler/Zoner",
-      "difficulty": "Fácil",
-      "description": "Descendente da tribo Thunderfoot que ouve as vozes do vento.",
-      "moves": [
-        { "name": "Condor Spire", "input": "↓↘→ + K", "damage": "900" },
-        { "name": "Condor Wind", "input": "↓↙← + P", "damage": "Estoque" },
-        { "name": "Tomahawk Buster", "input": "→↓↘ + P", "damage": "1100" },
-        { "name": "Mexican Typhoon", "input": "Giro 360 + P", "damage": "2300" }
-      ]
-    },
-    {
-      "id": "rashid",
-      "name": "Rashid",
-      "style": "Agilidade/Parkour",
-      "difficulty": "Difícil",
-      "description": "O mestre do vento e viciado em tecnologia.",
-      "moves": [
-        { "name": "Spinning Mixer", "input": "↓↘→ + P", "damage": "900" },
-        { "name": "Eagle Spike", "input": "↓↙← + K", "damage": "1000" },
-        { "name": "Whirlwind Shot", "input": "↓↘→ + K", "damage": "700" },
-        { "name": "Arabian Cyclone", "input": "↓↙← + P", "damage": "800" }
-      ]
-    },
-    {
-      "id": "aki",
-      "name": "A.K.I.",
-      "style": "Venenosa",
-      "difficulty": "Difícil",
-      "description": "A discípula de F.A.N.G fascinada por venenos.",
-      "moves": [
-        { "name": "Serpent Lash", "input": "↓↘→ + P", "damage": "800" },
-        { "name": "Nightshade Pulse", "input": "↓↘→ + K", "damage": "Veneno" },
-        { "name": "Orchid Whip", "input": "↓↙← + P", "damage": "900" },
-        { "name": "Sinister Slide", "input": "↓↙← + K", "damage": "Postura" }
-      ]
-    },
-    {
-      "id": "ed",
-      "name": "Ed",
-      "style": "Boxe Psicônico",
-      "difficulty": "Média",
-      "description": "Lutador que usa o poder da Shadaloo misturado ao boxe.",
-      "moves": [
-        { "name": "Psycho Blitz", "input": "↓↙← + P", "damage": "950" },
-        { "name": "Psycho Upper", "input": "→↓↘ + P", "damage": "1100" },
-        { "name": "Psycho Flicker", "input": "↓↘→ + P", "damage": "700" },
-        { "name": "Psycho Spark", "input": "↓↓ + P", "damage": "600" }
+        { "name": "Triglav", "input": "↓↓ + P", "type": "Special" },
+        { "name": "Torbalan", "input": "↓↘→ + K", "type": "Special" },
+        { "name": "Departure", "input": "↓↙← + P", "type": "Special" },
+        { "name": "Charnobog", "input": "↓↘→↓↘→ + P", "type": "Super Art Lv1" },
+        { "name": "Lovushka", "input": "↓↙←↓↙← + P", "type": "Super Art Lv2" },
+        { "name": "Intervention", "input": "↓↘→↓↘→ + K", "type": "Super Art Lv3" }
       ]
     },
     {
@@ -283,13 +156,15 @@
       "name": "Akuma",
       "style": "Glass Cannon",
       "difficulty": "Difícil",
-      "description": "O mestre do Punho Supremo que sucumbiu ao Satsui no Hado.",
+      "vitality": "9000",
+      "description": "O Mestre do Punho Supremo.",
       "moves": [
-        { "name": "Gou Hadoken", "input": "↓↘→ + P", "damage": "700" },
-        { "name": "Gou Shoryuken", "input": "→↓↘ + P", "damage": "1400" },
-        { "name": "Tatsumaki Zankuyaku", "input": "↓↙← + K", "damage": "900" },
-        { "name": "Hyakkishu", "input": "↓↘→ + K", "damage": "Varia" },
-        { "name": "Ashura Senku", "input": "→↓↘ ou ←↓↙ + KK", "damage": "TP" }
+        { "name": "Gou Hadoken", "input": "↓↘→ + P", "type": "Special" },
+        { "name": "Gou Shoryuken", "input": "→↓↘ + P", "type": "Special" },
+        { "name": "Ashura Senku", "input": "→↓↘ + KK", "type": "Special" },
+        { "name": "Mestu Gou Zanko", "input": "↓↘→↓↘→ + P", "type": "Super Art Lv1" },
+        { "name": "Emirei", "input": "↓↙←↓↙← + P", "type": "Super Art Lv2" },
+        { "name": "Shun Goku Satsu", "input": "LP, LP, →, LK, HP", "type": "Super Art Lv3" }
       ]
     }
   ]
