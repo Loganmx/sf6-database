@@ -1,24 +1,70 @@
 {
-  "version": "1.0.0",
+  "version": "12.0.0",
+  "generated_at": "2026-02-10",
+  "source": "SuperCombo Wiki + Frame Data Compilation",
+  "language": "pt-BR",
   "characters": [
     {
       "id": "ryu",
       "name": "Ryu",
       "image": "https://wiki.supercombo.gg/images/5/59/SF6_Ryu_Character_Select.png",
+      "portrait": "https://wiki.supercombo.gg/images/e/e0/SF6_Ryu_Icon.png",
       "style": "Shoto / Equilibrado",
-      "difficulty": "Fácil",
-      "description": "DADOS VITAIS:\n- Vida: 10000 | Dash F: 19f | Dash B: 23f\n- Caminhada F: 0.047 | Pulo: 4+38+3\n\nESTRATÉGIA:\nRyu busca a verdadeira força. Enfatiza um estilo paciente com ferramentas defensivas fortes (Hadoken e Shoryuken). Use Denjin Charge para fortalecer golpes especiais.\n\nFRAME DATA - NORMALS:\n- 5LP: 4f /-1 | 5MP: 6f /-1 | 5HP: 10f /-2\n- 2MP: 6f /0 | 2MK: 8f /-6 | 2HK: 9f /-12\n- 6HP (Solar Plexus): 20f Startup | +3 Block\n\nDETALHES TÉCNICOS:\nO Shoryuken OD tem invencibilidade frames 1-8. Donkey Kick OD causa Wall Bounce (+49 adv). SA3 tem 16f de invencibilidade total.",
-      "moves": [
-        { "name": "Hadoken (236P)", "input": "↓↘→ + P", "description": "LP é seguro; HP é rápido. OD permite combos no canto." },
-        { "name": "Shoryuken (623P)", "input": "→↓↘ + P", "description": "Anti-air. LP tem invencibilidade aérea. OD é o reversal." },
-        { "name": "Tatsu (214K)", "input": "↓↙← + K", "description": "LK mantém pressão. MK/HK atravessam projéteis baixos." },
-        { "name": "High Blade Kick (236K)", "input": "↓↘→ + K", "description": "Donkey Kick. LK dá safe jump. OD causa wall bounce." },
-        { "name": "Hashogeki (214P)", "input": "↓↙← + P", "description": "HP é +2 no block. Denjin cria launcher para combo." },
-        { "name": "Denjin Charge", "input": "↓↓ + P", "description": "Carrega o próximo Hadoken ou Hashogeki." },
-        { "name": "Shinku Hadoken (SA1)", "input": "↓↘→↓↘→ + P", "description": "Super Lv1. 5-hit. Invencível contra strikes/throws (1-8f)." },
-        { "name": "Shin Hashogeki (SA2)", "input": "↓↙←↓↙← + P", "description": "Super Lv2. Lv3 causa Tumble OTG (+78 adv)." },
-        { "name": "Shin Shoryuken (SA3)", "input": "↓↘→↓↘→ + K", "description": "Super Lv3. Dano massivo. Invencível nos frames 1-16." }
+      "vitals": {
+        "health": "10000",
+        "walk_speed": "Forward: 0.047 | Backward: 0.032",
+        "dash_speed": "Forward: 19f (1.252 dist) | Backward: 23f (0.923 dist)",
+        "jump": "Speed: 4+38+3 | Apex: 2.115",
+        "throw": "Range: 0.8 | Hurtbox: 0.33"
+      },
+      "introduction": "Ryu busca a verdadeira força. Como o shoto original, ele enfatiza um estilo de jogo paciente com ferramentas defensivas fortes (Hadoken e Shoryuken).",
+      "strategy_notes": [
+        "Jack of All Trades: Um kit projetado para ter uma opção em cada situação.",
+        "Denjin Charge: Carrega um estoque para fortalecer o próximo Hadoken ou Hashogeki.",
+        "Honed Strikes: Hitting hard, com pressão devastadora contra oponentes encurralados.",
+        "Weakness: Falta de 'gimmicks' ou 'knowledge checks' - exige fundamentos sólidos em tempo integral."
+      ],
+      "normals_frame_data": [
+        { "move": "5LP", "startup": "4f", "active": "3f", "recovery": "7f", "on_block": "-1", "on_hit": "+4", "details": "Melhor starter de 4f; mais alcance que 2LP." },
+        { "move": "5MP", "startup": "6f", "active": "4f", "recovery": "11f", "on_block": "-1", "on_hit": "+7", "details": "Principal iniciador de combo; link em 4HP em point blank." },
+        { "move": "5HP", "startup": "10f", "active": "5f", "recovery": "18f", "on_block": "-2", "on_hit": "+4", "details": "Poke agressivo; força estado de pé." },
+        { "move": "5LK", "startup": "5f", "active": "3f", "recovery": "11f", "on_block": "-4", "on_hit": "+2", "details": "Poke rápido e bufferable para punir no midrange." },
+        { "move": "5MK", "startup": "9f", "active": "3f", "recovery": "18f", "on_block": "-4", "on_hit": "+4", "details": "Poke sólido de médio alcance; o hurtbox da perna é elevado (frames 4-11)." },
+        { "move": "5HK", "startup": "12f", "active": "4f", "recovery": "20f", "on_block": "+1", "on_hit": "+9", "details": "Excelente anti-air e ferramenta de shimmy/whiff punish." },
+        { "move": "2LP", "startup": "4f", "active": "2f", "recovery": "9f", "on_block": "-1", "on_hit": "+4", "details": "Rápido, útil para combos após 2LK; menos pushback que o 5LP." },
+        { "move": "2MP", "startup": "6f", "active": "4f", "recovery": "13f", "on_block": "0", "on_hit": "+5", "details": "Ótimo para checar Drive Rush adversário; disjoint útil." },
+        { "move": "2HP", "startup": "9f", "active": "6f", "recovery": "21f", "on_block": "-7", "on_hit": "+1", "details": "Anti-air decente; força estado de pé no hit." },
+        { "move": "2LK", "startup": "5f", "active": "2f", "recovery": "10f", "on_block": "-1", "on_hit": "+3", "details": "Principal low starter; mais pushback que outros lights." },
+        { "move": "2MK", "startup": "8f", "active": "3f", "recovery": "19f", "on_block": "-6", "on_hit": "+1", "details": "Poke cancelável essencial; 20% de scaling inicial." },
+        { "move": "2HK", "startup": "9f", "active": "3f", "recovery": "23f", "on_block": "-12", "on_hit": "KD", "details": "Sweep de grande alcance; KD +40 (+47 no Punish Counter)." }
+      ],
+      "command_normals": [
+        { "move": "6MP (Collarbone Breaker)", "startup": "20f", "on_block": "-1", "on_hit": "+3", "details": "Overhead de 2 hits; comba após Drive Rush." },
+        { "move": "6HP (Solar Plexus)", "startup": "20f", "on_block": "+3", "on_hit": "+6", "details": "Vantagem massiva; 1º hit coloca oponente aéreo em juggle livre." },
+        { "move": "4HP (Short Uppercut)", "startup": "7f", "on_block": "-13", "on_hit": "+1", "details": "O normal pesado mais rápido do Ryu; essencial no canto." },
+        { "move": "4HK (Axe Kick)", "startup": "10f", "on_block": "-4", "on_hit": "0", "details": "2 hits; o 1º força estado de pé, o 2º causa OTG Bounce em oponentes aéreos." },
+        { "move": "6HK (Whirlwind Kick)", "startup": "16f", "on_block": "-4", "on_hit": "+2", "details": "Low crush (frames 13-20); cancelável apenas para Air Tatsu." }
+      ],
+      "special_moves": [
+        { "name": "Hadoken", "input": "236P", "notation": "↓↘→ + P", "details": "LP (16f) é o mais seguro; HP (12f) é o mais rápido. OD (12f) permite juggles no canto." },
+        { "name": "Shoryuken", "input": "623P", "notation": "→↓↘ + P", "details": "LP (5f) é o melhor anti-air; OD (6f) tem invencibilidade total nos frames 1-8." },
+        { "name": "Tatsu", "input": "214K", "notation": "↓↙← + K", "details": "LK Tatsu mantém o oponente perto para oki. MK/HK têm invencibilidade a projéteis baixos." },
+        { "name": "High Blade Kick", "input": "236K", "notation": "↓↘→ + K", "details": "LK permite safe jump no canto. OD (KK) causa Wall Bounce (+49 adv)." },
+        { "name": "Hashogeki", "input": "214P", "notation": "↓↙← + P", "details": "HP (30f) é +2 no block. Denjin vira launcher de juggle em qualquer lugar." },
+        { "name": "Denjin Charge", "input": "22P", "notation": "↓ ↓ + P", "details": "Recurso que fortalece o próximo Hadoken ou Hashogeki. Startup de 50f." }
+      ],
+      "super_arts": [
+        { "name": "Shinku Hadoken (SA1)", "input": "236236P", "details": "Startup 7f. Invencível contra strikes/throws (1-8f). 5 hits (8 com Denjin)." },
+        { "name": "Shin Hashogeki (SA2)", "input": "214214P", "details": "Carregável em 3 níveis. Lv3 causa Tumble OTG (+78 advantage)." },
+        { "name": "Shin Shoryuken (SA3)", "input": "236236K", "details": "Invencível (1-16f). 5f startup (2f se cancelado de 623HP)." }
       ]
     }
-  ]
+  ],
+  "shared_assets": {
+    "input_icons": [
+      { "name": "Input_236", "notation": "QCF", "url": "https://wiki.supercombo.gg/images/0/03/SF6_Input_236.png" },
+      { "name": "Input_214", "notation": "QCB", "url": "https://wiki.supercombo.gg/images/c/cb/SF6_Input_214.png" },
+      { "name": "Input_623", "notation": "DP", "url": "https://wiki.supercombo.gg/images/d/d4/SF6_Input_623.png" }
+    ]
+  }
 }
