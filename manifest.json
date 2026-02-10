@@ -1,5 +1,5 @@
 {
-  "version": "25.0.0",
+  "version": "50.0.0",
   "characters": [
     {
       "id": "ryu",
@@ -7,14 +7,13 @@
       "image": "https://www.streetfighter.com/6/assets/images/character/ryu/chara_visual.png",
       "style": "Shoto / Equilibrado",
       "difficulty": "Fácil",
-      "description": "[DADOS VITAIS]\nVida: 10000 | Dash F: 19f | Dash B: 23f | Caminhada F: 0.047 | Pulo: 4+38+3\n\n[ESTRATÉGIA COMPLETA]\nRyu é o mestre dos fundamentos. Use Hadoken para controlar o chão e Shoryuken para o ar. Denjin Charge fortalece seus golpes especiais. Fraqueza: Luta honesta demais, sem truques sujos.\n\n[FRAME DATA - NORMALS]\n5LP: 4f /-1 | 5MP: 6f /-1 | 5HP: 10f /-2 | 2LP: 4f /-1 | 2MP: 6f /0 | 2MK: 8f /-6 | 2HK: 9f /-12\n\n[COMMAND NORMALS]\n6MP (Overhead): 20f | 6HP (Solar Plexus): 20f (+3 block) | 4HP: 7f | 4HK: 10f\n\n[NOTAS TÉCNICAS]\nShoryuken OD tem invencibilidade frames 1-8. Donkey Kick OD causa Wall Bounce (+49 adv). SA3 tem 16f de invencibilidade total.",
+      "description": "DADOS VITAIS:\n- Vida: 10000 | Dash: 19f (F) / 23f (B)\n- Walk Speed: 0.047 (F) / 0.032 (B)\n\nESTRATÉGIA:\nRyu é o mestre dos fundamentos. Use Hadoken para controlar o chão e Shoryuken para punir saltos. Denjin Charge fortalece seus ataques especiais.\n\nFRAME DATA (NORMALS):\n- 5LP: 4f /-1 | 5MP: 6f /-1 | 5HP: 10f /-2\n- 2MP: 6f /0 | 2MK: 8f /-6 | 2HK: 9f /-12\n- 6HP (Solar Plexus): 20f Startup | +3 Block\n\nNOTAS TÉCNICAS:\nO Shoryuken OD tem invencibilidade total nos frames 1-8. O SA3 tem 5f de startup e 16f de invencibilidade total.",
       "moves": [
         { "name": "Hadoken (236P)", "input": "↓↘→ + P", "description": "LP é seguro; HP é rápido. OD permite combos no canto." },
         { "name": "Shoryuken (623P)", "input": "→↓↘ + P", "description": "Anti-air. LP tem invencibilidade aérea. OD é o reversal." },
         { "name": "Tatsu (214K)", "input": "↓↙← + K", "description": "LK mantém pressão. MK/HK atravessam projéteis baixos." },
         { "name": "High Blade Kick (236K)", "input": "↓↘→ + K", "description": "Donkey Kick. LK dá safe jump. OD causa wall bounce." },
         { "name": "Hashogeki (214P)", "input": "↓↙← + P", "description": "HP é +2 no block. Denjin cria launcher para combo." },
-        { "name": "Denjin Charge", "input": "↓↓ + P", "description": "Carrega o próximo Hadoken ou Hashogeki." },
         { "name": "Shinku Hadoken (SA1)", "input": "↓↘→↓↘→ + P", "description": "Super Lv1. Invencível contra strikes/throws (1-8f)." },
         { "name": "Shin Hashogeki (SA2)", "input": "↓↙←↓↙← + P", "description": "Super Lv2. Lv3 causa Tumble OTG (+78 adv)." },
         { "name": "Shin Shoryuken (SA3)", "input": "↓↘→↓↘→ + K", "description": "Super Lv3. Dano massivo. Invencível nos frames 1-16." }
