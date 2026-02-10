@@ -1,23 +1,23 @@
 {
-  "version": "15.0.0",
+  "version": "20.0.0",
   "characters": [
     {
       "id": "ryu",
       "name": "Ryu",
       "image": "https://www.streetfighter.com/6/assets/images/character/ryu/chara_visual.png",
-      "style": "Shoto / Fundamentals",
+      "style": "Shoto / Equilibrado",
       "difficulty": "Fácil",
-      "description": "DADOS VITAIS:\n- Life Points: 10000\n- Forward Walk Speed: 0.047\n- Backward Walk Speed: 0.032\n- Forward Dash Speed: 19 frames (Dist: 1.252)\n- Backward Dash Speed: 23 frames (Dist: 0.923)\n- Jump Speed: 4+38+3 | Apex: 2.115\n- Throw Range: 0.8\n\nESTRATÉGIA COMPLETA:\nRyu é o personagem shoto original. Enfatiza um estilo paciente com fortes ferramentas defensivas. Hadoken e Shoryuken formam sua base. Novos recursos como Denjin Charge e Hashogeki permitem estender pressão e combos. Fraqueza: Falta de 'gimmicks', exigindo fundamentos puros.\n\nFRAME DATA DETALHADO (NORMALS):\n- 5LP: Startup 4f | Active 3f | Recovery 7f | Block -1 | Hit +4\n- 5MP: Startup 6f | Active 4f | Recovery 11f | Block -1 | Hit +7\n- 5HP: Startup 10f | Active 5f | Recovery 18f | Block -2 | Hit +4\n- 5LK: Startup 5f | Active 3f | Recovery 11f | Block -4 | Hit +2\n- 5MK: Startup 9f | Active 3f | Recovery 18f | Block -4 | Hit +4\n- 5HK: Startup 12f | Active 4f | Recovery 20f | Block +1 | Hit +9\n- 2LP: Startup 4f | Active 2f | Recovery 9f | Block -1 | Hit +4\n- 2MP: Startup 6f | Active 4f | Recovery 13f | Block 0 | Hit +5\n- 2HP: Startup 9f | Active 6f | Recovery 21f | Block -7 | Hit +1\n- 2LK: Startup 5f | Active 2f | Recovery 10f | Block -1 | Hit +3\n- 2MK: Startup 8f | Active 3f | Recovery 19f | Block -6 | Hit +1\n- 2HK: Startup 9f | Active 3f | Recovery 23f | Block -12\n\nCOMMAND NORMALS:\n- 6MP: Startup 20f | Overhead de 2 hits.\n- 6HP: Startup 20f | Block +3 | Hit +6.\n- 4HP: Startup 7f | O normal pesado mais rápido do Ryu.\n- 4HK: Startup 10f | Cancelável em ambos os hits.\n\nDETALHES DE ESPECIAIS:\n- Shoryuken OD: Invencível frames 1-8.\n- Donkey Kick OD: Causa Wall Bounce (+49 advantage).\n- SA1: Invencível contra strikes/throws frames 1-8.\n- SA3: Invencível total frames 1-16. Startup de 5f (2f se cancelado de 623HP).",
+      "description": "DADOS TÉCNICOS COMPLETOS:\n\n[VITALS]\n- Vida: 10000\n- Walk (F/B): 0.047 / 0.032\n- Dash (F/B): 19f / 23f\n- Jump: 4+38+3 (Apex 2.115)\n- Throw Range: 0.8\n\n[ESTRATÉGIA]\nRyu foca em fundamentos. Hadoken controla o chão, Shoryuken controla o ar. Use Denjin Charge para potencializar o Hadoken e Hashogeki. Fraqueza: Jogo previsível, depende de leitura pura.\n\n[FRAME DATA - NORMALS]\n- 5LP: Startup 4f | Active 3f | Rec 7f | Block -1 | Hit +4\n- 5MP: Startup 6f | Active 4f | Rec 11f | Block -1 | Hit +7\n- 5HP: Startup 10f | Active 5f | Rec 18f | Block -2 | Hit +4\n- 5LK: Startup 5f | Active 3f | Rec 11f | Block -4 | Hit +2\n- 5MK: Startup 9f | Active 3f | Rec 18f | Block -4 | Hit +4\n- 5HK: Startup 12f | Active 4f | Rec 20f | Block +1 | Hit +9\n- 2LP: Startup 4f | Active 2f | Rec 9f | Block -1 | Hit +4\n- 2MP: Startup 6f | Active 4f | Rec 13f | Block 0 | Hit +5\n- 2HP: Startup 9f | Active 6f | Rec 21f | Block -7 | Hit +1\n- 2LK: Startup 5f | Active 2f | Rec 10f | Block -1 | Hit +3\n- 2MK: Startup 8f | Active 3f | Rec 19f | Block -6 | Hit +1\n- 2HK: Startup 9f | Active 3f | Rec 23f | Block -12 (Knockdown)\n\n[COMMAND NORMALS]\n- 6MP (Overhead): 20f Startup | -1 Block\n- 6HP (Solar Plexus): 20f Startup | +3 Block | +6 Hit\n- 4HP: 7f Startup | -13 Block\n- 4HK: 10f Startup | 2 hits canceláveis\n\n[NOTAS ESPECIAIS]\n- Shoryuken OD: Invencível 1-8f.\n- Donkey Kick OD: Wall Bounce (+49 adv).\n- SA1: Invencível 1-8f.\n- SA3: Invencível 1-16f | 5f Startup.",
       "moves": [
-        { "name": "Hadoken (236P)", "input": "↓↘→ + P", "description": "Projétil clássico. LP (16f) é seguro. OD (12f) permite combos no canto." },
-        { "name": "Shoryuken (623P)", "input": "→↓↘ + P", "description": "Anti-air. LP tem 14f de invencibilidade aérea. OD é o reversal principal." },
-        { "name": "Tatsu (214K)", "input": "↓↙← + K", "description": "LK mantém perto. MK/HK têm invencibilidade a projéteis baixos (10-41/61f)." },
-        { "name": "High Blade Kick (236K)", "input": "↓↘→ + K", "description": "Donkey Kick. LK dá safe jump no canto. OD quica na parede." },
-        { "name": "Hashogeki (214P)", "input": "↓↙← + P", "description": "HP é +2 no block. Denjin torna o golpe um launcher para juggles." },
-        { "name": "Denjin Charge", "input": "↓↓ + P", "description": "Carrega energia para o próximo Hadoken ou Hashogeki." },
-        { "name": "Shinku Hadoken (SA1)", "input": "↓↘→↓↘→ + P", "description": "Super Lv1. 5-hit (8 com Denjin). Dano mínimo escala 30%." },
-        { "name": "Shin Hashogeki (SA2)", "input": "↓↙←↓↙← + P", "description": "Super Lv2. Carregável. No Lv3 causa Tumble OTG (+78 advantage)." },
-        { "name": "Shin Shoryuken (SA3)", "input": "↓↘→↓↘→ + K", "description": "Super Lv3 Devastador. Invencível nos frames 1-16." }
+        { "name": "Hadoken (236P)", "input": "↓↘→ + P", "description": "Projétil. LP é seguro. OD permite combos de juggle no canto." },
+        { "name": "Shoryuken (623P)", "input": "→↓↘ + P", "description": "Anti-aéreo. LP tem invencibilidade aérea. OD é o reversal." },
+        { "name": "Tatsu (214K)", "input": "↓↙← + K", "description": "Atravessa projéteis baixos (MK/HK). LK mantém pressão." },
+        { "name": "High Blade Kick (236K)", "input": "↓↘→ + K", "description": "Donkey Kick. LK dá safe jump. OD causa wall bounce." },
+        { "name": "Hashogeki (214P)", "input": "↓↙← + P", "description": "HP é +2 no block. Denjin cria launcher para combo." },
+        { "name": "Denjin Charge", "input": "↓↓ + P", "description": "Carrega o próximo Hadoken ou Hashogeki." },
+        { "name": "Shinku Hadoken (SA1)", "input": "↓↘→↓↘→ + P", "description": "Super Lv1. 5-hit. Invencível contra strikes/throws (1-8f)." },
+        { "name": "Shin Hashogeki (SA2)", "input": "↓↙←↓↙← + P", "description": "Super Lv2. Lv3 causa Tumble OTG (+78 adv)." },
+        { "name": "Shin Shoryuken (SA3)", "input": "↓↘→↓↘→ + K", "description": "Super Lv3. Dano massivo. Invencível nos frames 1-16." }
       ]
     }
   ]
