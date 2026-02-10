@@ -1,0 +1,39 @@
+{
+  "version": "1.1.0",
+  "last_update": "2026-02-10",
+  "characters": [
+    {
+      "id": "ryu",
+      "name": "Ryu",
+      "style": "Shoto",
+      "difficulty": "Easy",
+      "description": "O eterno buscador da verdadeira força.",
+      "moves": [
+        {"name": "Hadoken", "input": "236P", "damage": "600"},
+        {"name": "Shoryuken", "input": "623P", "damage": "1000"}
+      ]
+    },
+    {
+      "id": "chun-li",
+      "name": "Chun-Li",
+      "style": "Zoning/Footsies",
+      "difficulty": "Hard",
+      "description": "A detetive da Interpol com as pernas mais fortes do mundo.",
+      "moves": [
+        {"name": "Kikoken", "input": "46P", "damage": "500"},
+        {"name": "Hyakuretsu Kyaku", "input": "214K", "damage": "800"}
+      ]
+    },
+    {
+      "id": "ken",
+      "name": "Ken",
+      "style": "Rushdown",
+      "difficulty": "Normal",
+      "description": "O ex-campeão que luta para limpar seu nome.",
+      "moves": [
+        {"name": "Hadoken", "input": "236P", "damage": "600"},
+        {"name": "Jinrai Kick", "input": "236K", "damage": "Varies"}
+      ]
+    }
+  ]
+}
