@@ -1,24 +1,302 @@
-{
-  "version": "20.0.0",
-  "characters": [
-    {
-      "id": "ryu",
-      "name": "Ryu",
-      "image": "https://www.streetfighter.com/6/assets/images/character/ryu/chara_visual.png",
-      "style": "Shoto / Equilibrado",
-      "difficulty": "Fácil",
-      "description": "DADOS TÉCNICOS COMPLETOS:\n\n[VITALS]\n- Vida: 10000\n- Walk (F/B): 0.047 / 0.032\n- Dash (F/B): 19f / 23f\n- Jump: 4+38+3 (Apex 2.115)\n- Throw Range: 0.8\n\n[ESTRATÉGIA]\nRyu foca em fundamentos. Hadoken controla o chão, Shoryuken controla o ar. Use Denjin Charge para potencializar o Hadoken e Hashogeki. Fraqueza: Jogo previsível, depende de leitura pura.\n\n[FRAME DATA - NORMALS]\n- 5LP: Startup 4f | Active 3f | Rec 7f | Block -1 | Hit +4\n- 5MP: Startup 6f | Active 4f | Rec 11f | Block -1 | Hit +7\n- 5HP: Startup 10f | Active 5f | Rec 18f | Block -2 | Hit +4\n- 5LK: Startup 5f | Active 3f | Rec 11f | Block -4 | Hit +2\n- 5MK: Startup 9f | Active 3f | Rec 18f | Block -4 | Hit +4\n- 5HK: Startup 12f | Active 4f | Rec 20f | Block +1 | Hit +9\n- 2LP: Startup 4f | Active 2f | Rec 9f | Block -1 | Hit +4\n- 2MP: Startup 6f | Active 4f | Rec 13f | Block 0 | Hit +5\n- 2HP: Startup 9f | Active 6f | Rec 21f | Block -7 | Hit +1\n- 2LK: Startup 5f | Active 2f | Rec 10f | Block -1 | Hit +3\n- 2MK: Startup 8f | Active 3f | Rec 19f | Block -6 | Hit +1\n- 2HK: Startup 9f | Active 3f | Rec 23f | Block -12 (Knockdown)\n\n[COMMAND NORMALS]\n- 6MP (Overhead): 20f Startup | -1 Block\n- 6HP (Solar Plexus): 20f Startup | +3 Block | +6 Hit\n- 4HP: 7f Startup | -13 Block\n- 4HK: 10f Startup | 2 hits canceláveis\n\n[NOTAS ESPECIAIS]\n- Shoryuken OD: Invencível 1-8f.\n- Donkey Kick OD: Wall Bounce (+49 adv).\n- SA1: Invencível 1-8f.\n- SA3: Invencível 1-16f | 5f Startup.",
-      "moves": [
-        { "name": "Hadoken (236P)", "input": "↓↘→ + P", "description": "Projétil. LP é seguro. OD permite combos de juggle no canto." },
-        { "name": "Shoryuken (623P)", "input": "→↓↘ + P", "description": "Anti-aéreo. LP tem invencibilidade aérea. OD é o reversal." },
-        { "name": "Tatsu (214K)", "input": "↓↙← + K", "description": "Atravessa projéteis baixos (MK/HK). LK mantém pressão." },
-        { "name": "High Blade Kick (236K)", "input": "↓↘→ + K", "description": "Donkey Kick. LK dá safe jump. OD causa wall bounce." },
-        { "name": "Hashogeki (214P)", "input": "↓↙← + P", "description": "HP é +2 no block. Denjin cria launcher para combo." },
-        { "name": "Denjin Charge", "input": "↓↓ + P", "description": "Carrega o próximo Hadoken ou Hashogeki." },
-        { "name": "Shinku Hadoken (SA1)", "input": "↓↘→↓↘→ + P", "description": "Super Lv1. 5-hit. Invencível contra strikes/throws (1-8f)." },
-        { "name": "Shin Hashogeki (SA2)", "input": "↓↙←↓↙← + P", "description": "Super Lv2. Lv3 causa Tumble OTG (+78 adv)." },
-        { "name": "Shin Shoryuken (SA3)", "input": "↓↘→↓↘→ + K", "description": "Super Lv3. Dano massivo. Invencível nos frames 1-16." }
-      ]
+#!/usr/bin/env python3
+"""
+SF6 SuperCombo MediaWiki Scraper - Gerador de Manifest.json
+============================================================
+Scraper 100% gratuito para Street Fighter 6 assets da Wiki SuperCombo.
+Usa MediaWiki API para evitar thumbnails e pegar URLs originais.
+
+Estrutura de saída:
+  assets/
+    <personagem>/
+      portrait/
+      render/
+    shared/
+      input_icons/
+  manifest.json
+
+Autor: Gerado para projeto PT-BR zero-cost
+"""
+
+import requests
+import json
+import hashlib
+import time
+from pathlib import Path
+from urllib.parse import urljoin, unquote
+from typing import Dict, List, Optional
+
+# ============================================================
+# CONFIGURAÇÕES
+# ============================================================
+BASE_URL = "https://wiki.supercombo.gg"
+API_URL = f"{BASE_URL}/api.php"
+MAIN_PAGE = "Street_Fighter_6"
+OUTPUT_DIR = Path("assets")
+MANIFEST_PATH = Path("manifest.json")
+
+# Rate limiting (respeitar o servidor)
+REQUEST_DELAY = 0.5  # segundos entre requests
+
+# Padrões de nomenclatura (baseado nos exemplos do Ryu)
+PORTRAIT_PATTERNS = ["Icon.png", "icon.png"]
+RENDER_PATTERNS = ["Character_Select.png", "2C.png", "Portrait.png"]
+INPUT_ICON_PATTERNS = [
+    "SF6_Input_", "SF6_LP.png", "SF6_MP.png", "SF6_HP.png",
+    "SF6_LK.png", "SF6_MK.png", "SF6_HK.png", "SF6_DR.png"
+]
+
+# ============================================================
+# FUNÇÕES AUXILIARES
+# ============================================================
+
+def api_request(params: dict) -> dict:
+    """Faz request na API MediaWiki com rate limiting"""
+    time.sleep(REQUEST_DELAY)
+    params["format"] = "json"
+    try:
+        response = requests.get(API_URL, params=params, timeout=15)
+        response.raise_for_status()
+        return response.json()
+    except Exception as e:
+        print(f"⚠️  Erro na API: {e}")
+        return {}
+
+def download_image(url: str, dest_path: Path) -> bool:
+    """Baixa imagem e salva no disco"""
+    try:
+        time.sleep(REQUEST_DELAY)
+        response = requests.get(url, timeout=15, stream=True)
+        response.raise_for_status()
+
+        dest_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(dest_path, 'wb') as f:
+            for chunk in response.iter_content(chunk_size=8192):
+                f.write(chunk)
+
+        print(f"  ✓ Baixado: {dest_path.name}")
+        return True
+    except Exception as e:
+        print(f"  ✗ Erro ao baixar {url}: {e}")
+        return False
+
+def get_file_hash(filepath: Path) -> str:
+    """Calcula hash SHA256 do arquivo"""
+    sha256 = hashlib.sha256()
+    with open(filepath, 'rb') as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+            sha256.update(chunk)
+    return sha256.hexdigest()
+
+# ============================================================
+# SCRAPER PRINCIPAL
+# ============================================================
+
+def get_character_list() -> List[str]:
+    """Detecta todos os personagens da página principal do SF6"""
+    print("🔍 Detectando personagens...")
+
+    data = api_request({
+        "action": "parse",
+        "page": MAIN_PAGE,
+        "prop": "links",
+        "redirects": 1
+    })
+
+    if "parse" not in data or "links" not in data["parse"]:
+        print("⚠️  Não foi possível detectar personagens")
+        return []
+
+    # Filtrar links que são páginas de personagens
+    # Geralmente seguem o padrão: Street_Fighter_6/Nome
+    characters = []
+    for link in data["parse"]["links"]:
+        title = link.get("*", "")
+        if title.startswith("Street_Fighter_6/") and "/" in title:
+            char_name = title.split("/")[-1]
+            # Ignorar páginas de sistema/meta
+            if char_name and not any(x in char_name.lower() for x in ["frame", "data", "system", "mechanics"]):
+                characters.append(char_name)
+
+    print(f"✓ Encontrados {len(characters)} personagens")
+    return sorted(set(characters))
+
+def get_page_images(page_title: str) -> List[Dict]:
+    """Lista todas as imagens de uma página com URLs originais"""
+    data = api_request({
+        "action": "query",
+        "titles": page_title,
+        "prop": "images",
+        "imlimit": "max"
+    })
+
+    if "query" not in data or "pages" not in data["query"]:
+        return []
+
+    page = list(data["query"]["pages"].values())[0]
+    if "images" not in page:
+        return []
+
+    image_titles = [img["title"] for img in page["images"]]
+
+    # Buscar URLs originais das imagens
+    images_data = []
+    for i in range(0, len(image_titles), 50):  # API limita a 50 por request
+        batch = image_titles[i:i+50]
+        img_data = api_request({
+            "action": "query",
+            "titles": "|".join(batch),
+            "prop": "imageinfo",
+            "iiprop": "url|size|mime"
+        })
+
+        if "query" in img_data and "pages" in img_data["query"]:
+            for page_data in img_data["query"]["pages"].values():
+                if "imageinfo" in page_data:
+                    info = page_data["imageinfo"][0]
+                    images_data.append({
+                        "title": page_data["title"].replace("File:", ""),
+                        "url": info["url"],
+                        "size": info.get("size", 0),
+                        "mime": info.get("mime", "")
+                    })
+
+    return images_data
+
+def find_best_match(images: List[Dict], patterns: List[str], char_name: str) -> Optional[Dict]:
+    """Encontra a melhor imagem baseada nos padrões"""
+    for pattern in patterns:
+        for img in images:
+            title = img["title"]
+            # Verifica se o nome do personagem e o padrão estão no título
+            if char_name.replace(" ", "_") in title and pattern in title:
+                return img
+    return None
+
+def scrape_character(char_name: str) -> Dict:
+    """Scrape completo de um personagem"""
+    print(f"\n📦 Processando: {char_name}")
+
+    page_title = f"Street_Fighter_6/{char_name}"
+    images = get_page_images(page_title)
+
+    if not images:
+        print(f"  ⚠️  Nenhuma imagem encontrada")
+        return {"name": char_name, "assets": {}}
+
+    print(f"  → {len(images)} imagens encontradas na página")
+
+    result = {
+        "name": char_name,
+        "wiki_url": f"{BASE_URL}/w/{page_title.replace(' ', '_')}",
+        "assets": {}
     }
-  ]
-}
+
+    # Buscar Portrait
+    portrait = find_best_match(images, PORTRAIT_PATTERNS, char_name)
+    if portrait:
+        dest = OUTPUT_DIR / char_name / "portrait" / portrait["title"]
+        if download_image(portrait["url"], dest):
+            result["assets"]["portrait"] = f"/assets/{char_name}/portrait/{portrait['title']}"
+
+    # Buscar Render (com fallback)
+    render = find_best_match(images, RENDER_PATTERNS, char_name)
+    if render:
+        dest = OUTPUT_DIR / char_name / "render" / render["title"]
+        if download_image(render["url"], dest):
+            result["assets"]["render"] = f"/assets/{char_name}/render/{render['title']}"
+
+    return result
+
+def scrape_input_icons() -> List[Dict]:
+    """Scrape dos ícones de input (comandos) compartilhados"""
+    print("\n🎮 Processando ícones de input...")
+
+    # Buscar na página principal ou em uma página de notação
+    images = get_page_images("Street_Fighter_6")
+
+    input_icons = []
+    seen_hashes = set()
+
+    for img in images:
+        title = img["title"]
+        # Filtrar apenas ícones de input
+        if any(pattern in title for pattern in INPUT_ICON_PATTERNS):
+            dest = OUTPUT_DIR / "shared" / "input_icons" / title
+            if download_image(img["url"], dest):
+                file_hash = get_file_hash(dest)
+
+                # Evitar duplicatas
+                if file_hash not in seen_hashes:
+                    seen_hashes.add(file_hash)
+                    input_icons.append({
+                        "name": title.replace("SF6_", "").replace(".png", ""),
+                        "path": f"/assets/shared/input_icons/{title}",
+                        "hash": file_hash
+                    })
+
+    print(f"✓ {len(input_icons)} ícones únicos baixados")
+    return input_icons
+
+# ============================================================
+# MAIN
+# ============================================================
+
+def main():
+    print("=" * 60)
+    print("SF6 SUPERCOMBO SCRAPER - GERADOR DE MANIFEST")
+    print("=" * 60)
+
+    # Criar estrutura de pastas
+    OUTPUT_DIR.mkdir(exist_ok=True)
+
+    # 1. Detectar personagens
+    characters = get_character_list()
+
+    if not characters:
+        print("❌ Nenhum personagem detectado. Verifique a conexão.")
+        return
+
+    # 2. Scrape de cada personagem
+    character_data = []
+    for char in characters:
+        data = scrape_character(char)
+        if data["assets"]:  # Só adiciona se tiver pelo menos 1 asset
+            character_data.append(data)
+
+    # 3. Scrape dos ícones de input
+    input_icons = scrape_input_icons()
+
+    # 4. Gerar manifest.json
+    manifest = {
+        "version": "1.0.0",
+        "generated_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+        "source": "SuperCombo Wiki (MediaWiki API)",
+        "license": "Fair Use - Informational Purpose",
+        "characters": character_data,
+        "shared_assets": {
+            "input_icons": input_icons
+        },
+        "stats": {
+            "total_characters": len(character_data),
+            "total_input_icons": len(input_icons)
+        }
+    }
+
+    with open(MANIFEST_PATH, 'w', encoding='utf-8') as f:
+        json.dump(manifest, f, indent=2, ensure_ascii=False)
+
+    print("\n" + "=" * 60)
+    print("✅ SCRAPING CONCLUÍDO!")
+    print("=" * 60)
+    print(f"📊 Personagens processados: {len(character_data)}")
+    print(f"🎮 Ícones de input: {len(input_icons)}")
+    print(f"📄 Manifest gerado: {MANIFEST_PATH}")
+    print(f"📁 Assets salvos em: {OUTPUT_DIR}/")
+    print("\n💡 Próximos passos:")
+    print("   1. Copie a pasta 'assets/' para 'public/assets/' do seu React")
+    print("   2. Copie 'manifest.json' para 'public/manifest.json'")
+    print("   3. Rode 'npm run build' e suba para o GitHub")
+    print("=" * 60)
+
+if __name__ == "__main__":
+    main()
