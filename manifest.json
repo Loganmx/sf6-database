@@ -1,79 +1,40 @@
 {
-  "version": "12.0.0",
-  "generated_at": "2026-02-10",
+  "version": "1.0.0",
   "characters": [
     {
       "id": "ryu",
       "name": "Ryu",
       "image": "https://wiki.supercombo.gg/images/5/59/SF6_Ryu_Character_Select.png",
-      "portrait": "https://wiki.supercombo.gg/images/e/e0/SF6_Ryu_Icon.png",
       "style": "Shoto / Equilibrado",
-      "vitals": {
-        "health": "10000",
-        "walk_speed": "Forward: 0.047 | Backward: 0.032",
-        "dash_speed": "Forward: 19f (1.252 dist) | Backward: 23f (0.923 dist)",
-        "jump": "Speed: 4+38+3 | Apex: 2.115",
-        "throw": "Range: 0.8 | Hurtbox: 0.33"
-      },
-      "introduction": "Ryu busca a verdadeira força, enfatizando um estilo paciente com Hadoken e Shoryuken.",
-      "normals_frame_data": [
-        { "move": "5LP", "startup": "4f", "active": "3f", "recovery": "7f", "on_block": "-1", "on_hit": "+4" },
-        { "move": "2MK", "startup": "8f", "active": "3f", "recovery": "19f", "on_block": "-6", "on_hit": "+1" }
-      ],
-      "special_moves": [
-        { "name": "Hadoken", "input": "236P", "details": "LP é seguro (-5); HP é rápido (-9)." },
-        { "name": "Shoryuken", "input": "623P", "details": "LP é o melhor anti-air com invencibilidade de 1-14f." }
-      ],
-      "super_arts": [
-        { "name": "Shin Shoryuken (SA3)", "input": "236236K", "details": "Invencível nos frames 1-16." }
+      "description": "VITAIS: Vida 10000 | Walk 0.047 | Dash 19f\n\nESTRATEGIA: Foco em fundamentos e Denjin Charge.\n\nFRAME DATA:\n- 5LP: 4f /-1 | 5MP: 6f /-1 | 5HP: 10f /-2\n- 2MP: 6f /0 | 2MK: 8f /-6 | 2HK: 9f /-12",
+      "moves": [
+        { "name": "Hadoken", "input": "236P", "description": "Controle de zona. LP seguro, HP rápido." },
+        { "name": "Shoryuken", "input": "623P", "description": "Anti-air. OD é o reversal (Invencível 1-8f)." },
+        { "name": "Shin Shoryuken (SA3)", "input": "236236K", "description": "Super Lv3. Invencível nos frames 1-16." }
       ]
     },
     {
       "id": "ken",
       "name": "Ken",
       "image": "https://wiki.supercombo.gg/images/d/df/SF6_Ken_Character_Select.png",
-      "portrait": "https://wiki.supercombo.gg/images/8/8e/SF6_Ken_Icon.png",
       "style": "Rushdown / Ofensivo",
-      "vitals": {
-        "health": "10000",
-        "walk_speed": "Forward: 0.050 | Backward: 0.035",
-        "dash_speed": "Forward: 19f (1.275 dist) | Backward: 23f (0.950 dist)",
-        "jump": "Speed: 4+38+3 | Apex: 2.115"
-      },
-      "introduction": "Ken força o erro do oponente com pressão constante e variações de chutes.",
-      "normals_frame_data": [
-        { "move": "5MP", "startup": "5f", "on_block": "+1", "on_hit": "+5" },
-        { "move": "2MK", "startup": "7f", "on_block": "-5", "on_hit": "0" }
-      ],
-      "special_moves": [
-        { "name": "Jinrai Kick", "input": "236K", "details": "Mixup complexo com finalizações high, low e overhead." }
-      ],
-      "super_arts": [
-        { "name": "Shinryu Reppa (SA3)", "input": "236236P", "details": "Invencível nos frames 1-17." }
+      "description": "VITAIS: Vida 10000 | Walk 0.050 | Dash 19f\n\nESTRATEGIA: Pressão constante e Corner Carry absurdo.\n\nFRAME DATA:\n- 5MP: 5f /+1 | 2MK: 7f /-5 | 2HK: 8f /-11\n- 6HP (Chin Buster): 11f (Starter de Target Combo)",
+      "moves": [
+        { "name": "Jinrai Kick", "input": "236K", "description": "Mixup de chutes High/Low/Overhead." },
+        { "name": "Shoryuken", "input": "623P", "description": "HP Shoryu tem 3 hits. OD invencível (1-9f)." },
+        { "name": "Shinryu Reppa (SA3)", "input": "236236P", "description": "Invencível nos frames 1-17. Dano máximo." }
       ]
     },
     {
       "id": "chunli",
       "name": "Chun-Li",
       "image": "https://wiki.supercombo.gg/images/0/03/SF6_Chun-Li_Character_Select.png",
-      "portrait": "https://wiki.supercombo.gg/images/a/a2/SF6_Chun-Li_Icon.png",
       "style": "Zoner / Mixup",
-      "vitals": {
-        "health": "10000",
-        "walk_speed": "Forward: 0.051 | Backward: 0.035",
-        "dash_speed": "Forward: 18f (1.300 dist) | Backward: 22f (1.000 dist)",
-        "jump": "Speed: 4+38+3 | Apex: 2.300"
-      },
-      "introduction": "Chun-Li utiliza Kikoken para controle e possui um jogo de mixup versátil.",
-      "normals_frame_data": [
-        { "move": "5MP", "startup": "6f", "on_block": "+1", "on_hit": "+5" },
-        { "move": "2MK", "startup": "8f", "on_block": "-3", "on_hit": "+2" }
-      ],
-      "special_moves": [
-        { "name": "Kikoken", "input": "[4]6P", "details": "Projétil de carga essencial para o controle de distância." }
-      ],
-      "super_arts": [
-        { "name": "Kikosho (SA1)", "input": "236236P", "details": "Super de curto alcance e alta utilidade defensiva." }
+      "description": "VITAIS: Vida 10000 | Walk 0.051 | Dash 18f\n\nESTRATEGIA: Controle com Kikoken e botões longos.\n\nFRAME DATA:\n- 5MP: 6f /+1 | 2MK: 8f /-3 | 5HP: 11f /-3\n- 2HK (Sweep): 7f /-11",
+      "moves": [
+        { "name": "Kikoken", "input": "[4]6P", "description": "Projétil de carga. Domina o espaço horizontal." },
+        { "name": "Hyakuretsu Kyaku", "input": "214K", "description": "Lightning Legs. Ótimo para confirmar combos." },
+        { "name": "Kikosho (SA1)", "input": "236236P", "description": "Super defensivo rápido e versátil." }
       ]
     }
   ]
