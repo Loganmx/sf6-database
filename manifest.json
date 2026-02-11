@@ -18,7 +18,7 @@
       "name": "Ken",
       "image": "https://wiki.supercombo.gg/images/d/df/SF6_Ken_Character_Select.png",
       "style": "Rushdown / Ofensivo",
-      "description": "Ken é mestre em pressão. Ele possui uma corrida especial e combos que levam o oponente para o canto da tela com facilidade.",
+      "description": "Ken é o mestre da pressão. Possui uma corrida especial e combos que levam o oponente para o canto da tela com facilidade.",
       "moves": [
         { "name": "Hadoken", "input": "236P", "description": "Projétil para controle de ritmo." },
         { "name": "Jinrai Kick", "input": "236K", "description": "Mixup de chutes. Pode terminar em cima ou embaixo." },
