@@ -12,15 +12,20 @@
         "health": "10000",
         "walk_speed": "Forward: 0.047 | Backward: 0.032",
         "dash_speed": "Forward: 19f (1.252 dist) | Backward: 23f (0.923 dist)",
-        "jump": "Speed: 4+38+3 | Apex: 2.115"
+        "jump": "Speed: 4+38+3 | Apex: 2.115",
+        "throw": "Range: 0.8 | Hurtbox: 0.33"
       },
+      "introduction": "Ryu busca a verdadeira força, enfatizando um estilo paciente com Hadoken e Shoryuken.",
       "normals_frame_data": [
-        { "move": "5LP", "startup": "4f", "on_block": "-1", "on_hit": "+4" },
-        { "move": "2MK", "startup": "8f", "on_block": "-6", "on_hit": "+1" }
+        { "move": "5LP", "startup": "4f", "active": "3f", "recovery": "7f", "on_block": "-1", "on_hit": "+4" },
+        { "move": "2MK", "startup": "8f", "active": "3f", "recovery": "19f", "on_block": "-6", "on_hit": "+1" }
       ],
       "special_moves": [
-        { "name": "Hadoken", "input": "236P", "details": "Controle de zona clássico." },
-        { "name": "Shoryuken", "input": "623P", "details": "Invecibilidade aérea no LP." }
+        { "name": "Hadoken", "input": "236P", "details": "LP é seguro (-5); HP é rápido (-9)." },
+        { "name": "Shoryuken", "input": "623P", "details": "LP é o melhor anti-air com invencibilidade de 1-14f." }
+      ],
+      "super_arts": [
+        { "name": "Shin Shoryuken (SA3)", "input": "236236K", "details": "Invencível nos frames 1-16." }
       ]
     },
     {
@@ -35,13 +40,16 @@
         "dash_speed": "Forward: 19f (1.275 dist) | Backward: 23f (0.950 dist)",
         "jump": "Speed: 4+38+3 | Apex: 2.115"
       },
+      "introduction": "Ken força o erro do oponente com pressão constante e variações de chutes.",
       "normals_frame_data": [
         { "move": "5MP", "startup": "5f", "on_block": "+1", "on_hit": "+5" },
         { "move": "2MK", "startup": "7f", "on_block": "-5", "on_hit": "0" }
       ],
       "special_moves": [
-        { "name": "Jinrai Kick", "input": "236K", "details": "Mixup com extensões high/low." },
-        { "name": "Shoryuken", "input": "623P", "details": "HP Shoryuken tem 3 hits." }
+        { "name": "Jinrai Kick", "input": "236K", "details": "Mixup complexo com finalizações high, low e overhead." }
+      ],
+      "super_arts": [
+        { "name": "Shinryu Reppa (SA3)", "input": "236236P", "details": "Invencível nos frames 1-17." }
       ]
     },
     {
@@ -56,13 +64,16 @@
         "dash_speed": "Forward: 18f (1.300 dist) | Backward: 22f (1.000 dist)",
         "jump": "Speed: 4+38+3 | Apex: 2.300"
       },
+      "introduction": "Chun-Li utiliza Kikoken para controle e possui um jogo de mixup versátil.",
       "normals_frame_data": [
         { "move": "5MP", "startup": "6f", "on_block": "+1", "on_hit": "+5" },
         { "move": "2MK", "startup": "8f", "on_block": "-3", "on_hit": "+2" }
       ],
       "special_moves": [
-        { "name": "Kikoken", "input": "[4]6P", "details": "Projétil de carga para controle." },
-        { "name": "Hyakuretsu Kyaku", "input": "214K", "details": "Lightning Legs. Ótimo para combos." }
+        { "name": "Kikoken", "input": "[4]6P", "details": "Projétil de carga essencial para o controle de distância." }
+      ],
+      "super_arts": [
+        { "name": "Kikosho (SA1)", "input": "236236P", "details": "Super de curto alcance e alta utilidade defensiva." }
       ]
     }
   ]
