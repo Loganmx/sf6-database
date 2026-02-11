@@ -6,11 +6,11 @@
       "name": "Ryu",
       "image": "https://wiki.supercombo.gg/images/5/59/SF6_Ryu_Character_Select.png",
       "style": "Shoto / Equilibrado",
-      "description": "VITAIS: Vida 10000 | Walk 0.047 | Dash 19f\n\nESTRATEGIA: Foco em fundamentos e Denjin Charge.\n\nFRAME DATA:\n- 5LP: 4f /-1 | 5MP: 6f /-1 | 5HP: 10f /-2\n- 2MP: 6f /0 | 2MK: 8f /-6 | 2HK: 9f /-12",
+      "description": "Ryu busca a verdadeira força. Um personagem equilibrado focado em fundamentos, Hadoken e Shoryuken. Use Denjin Charge para fortalecer seus projéteis.",
       "moves": [
-        { "name": "Hadoken", "input": "236P", "description": "Controle de zona. LP seguro, HP rápido." },
-        { "name": "Shoryuken", "input": "623P", "description": "Anti-air. OD é o reversal (Invencível 1-8f)." },
-        { "name": "Shin Shoryuken (SA3)", "input": "236236K", "description": "Super Lv3. Invencível nos frames 1-16." }
+        { "name": "Hadoken", "input": "236P", "description": "Projétil de controle. LP é seguro, HP é rápido." },
+        { "name": "Shoryuken", "input": "623P", "description": "Anti-aéreo principal. Versão OD é invencível." },
+        { "name": "Shin Shoryuken (SA3)", "input": "236236K", "description": "Super nível 3. Dano massivo e invencibilidade total." }
       ]
     },
     {
@@ -18,11 +18,11 @@
       "name": "Ken",
       "image": "https://wiki.supercombo.gg/images/d/df/SF6_Ken_Character_Select.png",
       "style": "Rushdown / Ofensivo",
-      "description": "VITAIS: Vida 10000 | Walk 0.050 | Dash 19f\n\nESTRATEGIA: Pressão constante e Corner Carry absurdo.\n\nFRAME DATA:\n- 5MP: 5f /+1 | 2MK: 7f /-5 | 2HK: 8f /-11\n- 6HP (Chin Buster): 11f (Starter de Target Combo)",
+      "description": "Ken é mestre em pressão. Ele possui uma corrida especial e combos que levam o oponente para o canto da tela com facilidade.",
       "moves": [
-        { "name": "Jinrai Kick", "input": "236K", "description": "Mixup de chutes High/Low/Overhead." },
-        { "name": "Shoryuken", "input": "623P", "description": "HP Shoryu tem 3 hits. OD invencível (1-9f)." },
-        { "name": "Shinryu Reppa (SA3)", "input": "236236P", "description": "Invencível nos frames 1-17. Dano máximo." }
+        { "name": "Hadoken", "input": "236P", "description": "Projétil para controle de ritmo." },
+        { "name": "Jinrai Kick", "input": "236K", "description": "Mixup de chutes. Pode terminar em cima ou embaixo." },
+        { "name": "Shinryu Reppa (SA3)", "input": "236236P", "description": "Super nível 3. Excelente para finalizar combos." }
       ]
     },
     {
@@ -30,11 +30,11 @@
       "name": "Chun-Li",
       "image": "https://wiki.supercombo.gg/images/0/03/SF6_Chun-Li_Character_Select.png",
       "style": "Zoner / Mixup",
-      "description": "VITAIS: Vida 10000 | Walk 0.051 | Dash 18f\n\nESTRATEGIA: Controle com Kikoken e botões longos.\n\nFRAME DATA:\n- 5MP: 6f /+1 | 2MK: 8f /-3 | 5HP: 11f /-3\n- 2HK (Sweep): 7f /-11",
+      "description": "Chun-Li domina o espaço com Kikoken e botões de longo alcance. Possui uma postura especial com diversos ataques únicos.",
       "moves": [
-        { "name": "Kikoken", "input": "[4]6P", "description": "Projétil de carga. Domina o espaço horizontal." },
-        { "name": "Hyakuretsu Kyaku", "input": "214K", "description": "Lightning Legs. Ótimo para confirmar combos." },
-        { "name": "Kikosho (SA1)", "input": "236236P", "description": "Super defensivo rápido e versátil." }
+        { "name": "Kikoken", "input": "[4]6P", "description": "Projétil de carga para dominar a distância." },
+        { "name": "Hyakuretsu Kyaku", "input": "214K", "description": "Chutes múltiplos. Ótimo para confirmar combos." },
+        { "name": "Kikosho (SA1)", "input": "236236P", "description": "Super rápido, bom para defesa e combos curtos." }
       ]
     }
   ]
