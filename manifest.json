@@ -1,52 +1,22 @@
 {
-  "version": "12.0.0",
-  "generated_at": "2026-02-10",
+  "version": "1.0.0",
   "characters": [
     {
       "id": "ryu",
       "name": "Ryu",
       "image": "https://wiki.supercombo.gg/images/5/59/SF6_Ryu_Character_Select.png",
-      "portrait": "https://wiki.supercombo.gg/images/e/e0/SF6_Ryu_Icon.png",
       "style": "Shoto / Equilibrado",
-      "vitals": {
-        "health": "10000",
-        "walk_speed": "Forward: 0.047 | Backward: 0.032",
-        "dash_speed": "Forward: 19f (1.252 dist) | Backward: 23f (0.923 dist)",
-        "jump": "Speed: 4+38+3 | Apex: 2.115 | Forward Dist: 1.90",
-        "throw": "Range: 0.8 | Hurtbox: 0.33"
-      },
-      "introduction": "Ryu busca a verdadeira força. Como o shoto original, ele enfatiza um estilo de jogo paciente com ferramentas defensivas fortes.",
-      "strategy_notes": [
-        "Jack of All Trades: Kit projetado para ter uma opção em cada situação.",
-        "Denjin Charge: Gerencia recurso bônus para fortalecer projéteis e Hashogeki.",
-        "Weakness: Falta de 'gimmicks' - exige fundamentos sólidos o tempo todo."
-      ],
-      "normals_frame_data": [
-        { "move": "5LP", "startup": "4f", "active": "3f", "recovery": "7f", "on_block": "-1", "on_hit": "+4", "details": "Ideal starter de 4f; mais alcance que 2LP." },
-        { "move": "5MP", "startup": "6f", "active": "4f", "recovery": "11f", "on_block": "-1", "on_hit": "+7", "details": "Principal iniciador de combo." },
-        { "move": "5HP", "startup": "10f", "active": "5f", "recovery": "18f", "on_block": "-2", "on_hit": "+4", "details": "Poke agressivo; força stand no hit." },
-        { "move": "2MK", "startup": "8f", "active": "3f", "recovery": "19f", "on_block": "-6", "on_hit": "+1", "details": "Poke cancelável essencial; 20% de scaling inicial." },
-        { "move": "2HK", "startup": "9f", "active": "3f", "recovery": "23f", "on_block": "-12", "on_hit": "KD", "details": "Sweep com ótimo alcance; KD +40." }
-      ],
-      "command_normals": [
-        { "move": "6MP", "startup": "20f", "on_block": "-1", "on_hit": "+3", "details": "Overhead de 2 hits." },
-        { "move": "6HP", "startup": "20f", "on_block": "+3", "on_hit": "+6", "details": "Vantagem massiva." }
-      ],
-      "special_moves": [
-        { "name": "Hadoken", "input": "236P", "startup": "12-16f", "details": "LP é seguro; HP é rápido. OD permite combos no canto." },
-        { "name": "Shoryuken", "input": "623P", "startup": "5-7f", "details": "LP é o melhor anti-air. OD tem invencibilidade frames 1-8." }
-      ],
-      "super_arts": [
-        { "name": "Shinku Hadoken (SA1)", "input": "236236P", "startup": "7f", "details": "Invencível contra strikes/throws (1-8f)." },
-        { "name": "Shin Shoryuken (SA3)", "input": "236236K", "startup": "5f", "details": "Invencível (1-16f)." }
+      "description": "[DADOS VITAIS]\nVida: 10000 | Walk F: 0.047 | Dash F: 19f | Jump: 4+38+3\n\n[ESTRATÉGIA]\nRyu foca em fundamentos. Use Hadoken para controle e Shoryuken para punir saltos. Denjin Charge fortalece seus especiais.\n\n[FRAME DATA - NORMALS]\n- 5LP: 4f /-1 | 5MP: 6f /-1 | 5HP: 10f /-2\n- 2MP: 6f /0 | 2MK: 8f /-6 | 2HK: 9f /-12\n\n[COMMAND NORMALS]\n- 6MP: 20f | 6HP: 20f (+3 block) | 4HP: 7f\n\n[NOTAS TÉCNICAS]\nShoryuken OD: Invencível 1-8f. SA3: 16f de invencibilidade total.",
+      "moves": [
+        { "name": "Hadoken", "input": "236P", "description": "LP é seguro; HP é rápido. OD permite combos no canto." },
+        { "name": "Shoryuken", "input": "623P", "description": "Anti-air. LP tem invencibilidade aérea. OD é o reversal." },
+        { "name": "Tatsu", "input": "214K", "description": "LK mantém pressão. MK/HK atravessam projéteis baixos." },
+        { "name": "High Blade Kick", "input": "236K", "description": "Donkey Kick. OD causa wall bounce." },
+        { "name": "Hashogeki", "input": "214P", "description": "HP (+2 block). Denjin vira launcher de juggle." },
+        { "name": "Shinku Hadoken (SA1)", "input": "236236P", "description": "Invencível contra strikes/throws (1-8f)." },
+        { "name": "Shin Hashogeki (SA2)", "input": "214214P", "description": "Lv3 causa Tumble OTG (+78 adv)." },
+        { "name": "Shin Shoryuken (SA3)", "input": "236236K", "description": "Dano massivo. Invencível nos frames 1-16." }
       ]
     }
-  ],
-  "shared_assets": {
-    "input_icons": [
-      { "name": "Input_236", "url": "https://wiki.supercombo.gg/images/0/03/SF6_Input_236.png" },
-      { "name": "Input_214", "url": "https://wiki.supercombo.gg/images/c/cb/SF6_Input_214.png" },
-      { "name": "Input_623", "url": "https://wiki.supercombo.gg/images/d/d4/SF6_Input_623.png" }
-    ]
-  }
+  ]
 }
